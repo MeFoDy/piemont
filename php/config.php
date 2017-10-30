@@ -5,7 +5,7 @@ $config = [
     "db" => [
         "host" => "localhost",
         "user" => "user",
-        "password" => "password",
+        "password" => "passwrod",
         "database" => "database",
     ]
 ];
