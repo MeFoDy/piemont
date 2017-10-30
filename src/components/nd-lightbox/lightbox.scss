@@ -1,0 +1,27 @@
+@import '../../styles/settings.scss';
+
+@import '~simplelightbox/dist/simplelightbox.css';
+
+.nd-lightbox-gallery {
+    a img {
+        transition: transform 0.15s ease;
+    }
+
+    a:hover img {
+        z-index: 1;
+
+        transform: scale(1.05);
+    }
+}
+
+.sl-wrapper .sl-image .sl-caption {
+    background: rgba($color--primary-dark, 0.8);
+}
+
+.sl-wrapper .sl-close {
+    color: $color--primary-dark;
+
+    &:hover {
+        color: $color--primary;
+    }
+}

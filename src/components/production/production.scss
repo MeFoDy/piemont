@@ -1,0 +1,43 @@
+@import '../../styles/settings.scss';
+
+.production {
+    position: relative;
+
+    background-color: #fff1cc;
+    box-shadow: 0 0 100px 0 rgba(#000000, 0.5);
+
+    &__wrapper {
+        max-width: $widht--container;
+        margin: 0 auto;
+    }
+
+    &__title {
+    }
+
+    &__block {
+        padding: 20px 50px;
+
+        background-color: #fff1cc;
+
+        &--alt {
+            background-color: #fff8e6;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 20px;
+
+        text-align: center;
+
+        color: #00c1cf;
+
+        font-size: 24px;
+    }
+
+    &__items {
+        display: flex;
+
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

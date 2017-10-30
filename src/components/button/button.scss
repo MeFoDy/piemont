@@ -1,0 +1,30 @@
+@import '../../styles/settings.scss';
+
+.button {
+    display: inline-block;
+
+    height: 60px;
+    margin: 0 10px;
+    padding: 20px;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    color: #00c1cf;
+    border: 2px solid $color--button;
+    border-radius: 30px;
+    background-color: $color--button-bg;
+
+    font-size: 16px;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 15px 0 $color--button;
+    }
+
+    &:hover,
+    &.active {
+        color: $color--button-bg;
+        background-color: $color--button;
+    }
+}

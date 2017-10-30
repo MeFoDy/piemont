@@ -1,0 +1,124 @@
+@import '../../styles/settings.scss';
+
+@import '../../styles/mixins.scss';
+
+.hero {
+    $hero--height: calc(100vh - #{$height--header});
+    $hero--min-width: 300px;
+    $md-size: 900px;
+    $sm-size: 700px;
+
+    position: relative;
+
+    width: 100%;
+    height: $hero--height;
+    min-height: $hero--min-width;
+
+    align-items: center;
+    justify-content: center;
+
+    &__carousel {
+        z-index: 0;
+
+        width: 100%;
+        height: $hero--height;
+
+        background: #333333;
+
+        .indicators {
+            bottom: 30px;
+        }
+
+        .slider {
+            height: $hero--height !important;
+            min-height: $hero--min-width;
+        }
+
+        .slider-indicator-icon {
+            margin: 0 5px;
+        }
+    }
+
+    &__carousel-slide {
+        height: $hero--height;
+        min-height: $hero--min-width;
+
+        background-repeat: none;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .slide-1 {
+        background-image: url('/static/images/slider/slider-1.jpg');
+    }
+
+    .slide-2 {
+        background-image: url('/static/images/slider/slider-2.jpg');
+    }
+
+    .slide-3 {
+        background-image: url('/static/images/slider/slider-3.jpg');
+    }
+
+    .slide-4 {
+        background-image: url('/static/images/slider/slider-4.jpg');
+    }
+
+    &__wrapper {
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__container {
+        position: relative;
+
+        width: 100%;
+
+        text-align: center;
+
+        color: #00c1cf;
+        background: rgba(#ffffff, 0.2);
+    }
+
+    &__title {
+        @include mqm($md-size) {
+            font-size: 90px;
+        }
+        @include mqm($sm-size) {
+            font-size: 60px;
+        }
+
+        margin: 0;
+
+        text-shadow: 5px 5px 5px rgba(#00afaa,0.3), 3px 3px 1px rgba(#000000,0.7);
+
+        font-size: 120px;
+    }
+
+    &__subtitle {
+        @include mqm($md-size) {
+            font-size: 21px;
+        }
+        @include mqm($sm-size) {
+            font-size: 14px;
+        }
+
+        margin: 0;
+        padding: 0 0 30px;
+
+        text-shadow: 3px 3px 3px rgba(#00afaa,0.3), 1px 1px 0 rgba(#000000,0.7);
+
+        font-size: 28px;
+    }
+}

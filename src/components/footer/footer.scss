@@ -1,0 +1,17 @@
+@import '../../styles/settings.scss';
+
+.footer {
+    display: flex;
+    flex-direction: column;
+
+    height: $height--footer;
+    padding: 0 20px;
+
+    text-align: center;
+
+    color: #aaaaaa;
+    background: $color--dark;
+
+    justify-content: center;
+    align-items: center;
+}

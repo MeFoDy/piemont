@@ -1,0 +1,62 @@
+@import '../../styles/settings.scss';
+
+@import '../../styles/mixins.scss';
+
+.about {
+    $sm-size: 850px;
+
+    @include mqm($sm-size) {
+        padding: 10px 20px 20px;
+
+        font-size: 16px;
+    }
+
+    max-width: $widht--container;
+    margin: 0 auto;
+    padding: 10px 50px 50px;
+
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+
+    p {
+        margin-bottom: 1.5em;
+    }
+
+    &__description {
+        margin-bottom: 1em;
+    }
+
+    &__sertificates {
+        display: flex;
+
+        width: 100%;
+
+        font-size: 14px;
+
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__document-block {
+        display: block;
+
+        width: 250px;
+        margin: 0 20px 20px;
+
+        text-align: center;
+    }
+
+    &__document-title {
+        margin-top: 1em;
+    }
+
+    &__document-image {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__document-img {
+        max-width: 100%;
+    }
+}
