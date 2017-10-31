@@ -1,11 +1,22 @@
+@import '../../styles/settings.scss';
+
 .product-card {
+    $btn--height: 30px;
+    $card--width: 400px;
+
     position: relative;
 
-    width: 400px;
-    margin: 20px;
-    padding: 20px 20px 420px;
+    width: $card--width;
+    margin: 15px;
+    padding: 20px 20px #{$card--width + 10px};
 
-    background: #00c1cf;
+    background: $color--primary;
+
+    font-weight: 400;
+
+    &.inactive {
+        background: #999999;
+    }
 
     &__title {
         position: relative;
@@ -21,7 +32,22 @@
         color: #fff1cc;
         border-bottom: 1px dotted #fff1cc;
 
+        font-size: 18px;
         font-weight: bold;
+    }
+
+    &__price {
+        display: inline-block;
+        float: right;
+
+        margin-top: 3px;
+        padding: 2px 5px;
+
+        color: $color--primary-dark;
+        border-radius: 6px;
+        background-color: #ffffff;
+
+        font-size: 12px;
     }
 
     &__description {
@@ -40,9 +66,84 @@
         bottom: 0;
         left: 0;
 
-        width: 400px;
+        width: $card--width;
         max-width: 100%;
 
         transition: all 0.3s ease-in-out;
+    }
+
+    &__controls {
+        display: flex;
+
+        margin-bottom: 1em;
+    }
+
+    &__count-input {
+        width: 40px;
+        height: $btn--height;
+        padding: 0 5px;
+
+        border: none;
+
+        font-size: 14px;
+        line-height: $btn--height;
+    }
+
+    &__order-info {
+        text-align: center;
+
+        color: #ffffff;
+
+        font-size: 14px;
+        line-height: $btn--height;
+
+        flex-grow: 1;
+
+        &.not-visible {
+            opacity: 0;
+        }
+    }
+
+    &__btn {
+        height: $btn--height;
+        padding: 0;
+
+        cursor: pointer;
+        text-align: center;
+
+        color: #ffffff;
+        border: 2px solid $color--primary-dark;
+        background: $color--primary-dark;
+
+        font-size: 14px;
+        line-height: $btn--height - 4px;
+
+        &:hover {
+            background: lighten($color--primary-dark, 5%);
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+
+            opacity: 0.3;
+            background: $color--primary-dark;
+        }
+    }
+
+    &__btn-plus {
+        width: $btn--height;
+        margin-right: 5px;
+
+        line-height: $btn--height;
+    }
+
+    &__btn-minus {
+        width: $btn--height;
+
+        line-height: $btn--height;
+    }
+
+    &__btn-add {
+        width: 100px;
     }
 }

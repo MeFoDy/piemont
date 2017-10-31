@@ -53,6 +53,16 @@
             <div class="about__document-block">
                 <div class="about__document-image">
                     <nd-lightbox
+                        :images="images.registration"
+                        :image_class=" 'about__document-img' "
+                        :options="lightboxOptions">
+                    </nd-lightbox>
+                </div>
+                <div class="about__document-title">Свидетельство о государственной регистрации юридического лица</div>
+            </div>
+            <div class="about__document-block">
+                <div class="about__document-image">
+                    <nd-lightbox
                         :images="images.sertificate"
                         :image_class=" 'about__document-img' "
                         :options="lightboxOptions">
@@ -69,16 +79,6 @@
                     </nd-lightbox>
                 </div>
                 <div class="about__document-title">Декларация о соответствии</div>
-            </div>
-            <div class="about__document-block">
-                <div class="about__document-image">
-                    <nd-lightbox
-                        :images="images.registration"
-                        :image_class=" 'about__document-img' "
-                        :options="lightboxOptions">
-                    </nd-lightbox>
-                </div>
-                <div class="about__document-title">Свидетельство о государственной регистрации юридического лица</div>
             </div>
         </div>
     </div>

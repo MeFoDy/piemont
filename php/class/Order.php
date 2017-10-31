@@ -3,24 +3,44 @@ if (!defined("is-INDEX-page")) exit();
 
 class Order
 {
-    public static function getAll()
+    public static function getAll($withComplete = false, $withNew = true)
     {
         $ret = [];
         global $mysqli;
+        $whereClause = "";
+        if ($withComplete) {
+            if ($withNew) {
+                $whereClause = ""; // all
+            }
+            else {
+                $whereClause = "WHERE b.is_done = TRUE"; // done only
+            }
+        }
+        else {
+            if ($withNew) {
+                $whereClause = "WHERE b.is_done != TRUE";  // new only
+            }
+            else {
+                $whereClause = "WHERE FALSE = TRUE"; // nothing :)
+            }
+        }
         $query = <<<EOT
-        SELECT 
-            b.id as 'id', 
+        SELECT
+            b.created_on as 'created_on',
+            b.id as 'id',
             b.name as 'customer_name',
             b.phone as 'phone',
             b.address as 'address',
             b.comment as 'comment',
-            p.name as 'product_name', 
+            p.name as 'product_name',
+            p.unit as 'unit',
             oi.count as 'count',
             b.is_done as 'basket_is_done'
         FROM basket AS b
         RIGHT JOIN order_item AS oi ON b.id = oi.basket_id
         LEFT JOIN product AS p ON oi.product_id = p.id
-        ORDER BY b.id DESC
+        {$whereClause}
+        ORDER BY created_on DESC
 EOT;
         if (!$result = $mysqli->query($query)) {
             return $ret;
@@ -33,13 +53,14 @@ EOT;
             $id = $order['id'];
             if (isset($ret[$id])) {
                 $ret[$id][] = $order;
-             } else {
+            }
+            else {
                 $ret[$id] = array($order);
             }
         }
         return $ret;
     }
-    
+
     public static function confirm($basket_id)
     {
         global $mysqli;
@@ -64,7 +85,7 @@ EOT;
             echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
         }
         mysqli_stmt_close($stmt);
-        
+
         /**
          *  Set order_items done
          * */
@@ -86,8 +107,8 @@ EOT;
             echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
         }
         mysqli_stmt_close($stmt);
-        
-        
+
+
         /**
          * Count decreasing
          * */

@@ -19,7 +19,7 @@ echo <<<EOD
             <th>Изображение</th>
             <th>Ед. изм.</th>
             <th>Количество</th>
-            <th>Цена (Br)</th>
+            <th>Цена (Byn)</th>
             <th>На сайте</th>
             <th>Действия</th>
         </tr>
@@ -36,7 +36,7 @@ foreach ($products as $product) {
         <td data-label="#">{$product["sort_order"]}</td>
         <td data-label="Название"><span title="{$product["description"]}">{$product["name"]}</span></td>
         <td data-label="Категория">{$category["name"]}</td>
-        <td data-label="Изображение"><img class="img-scale" src="../images/icecream/{$product["image_path"]}" style="height:50px; margin:0;"></td>
+        <td data-label="Изображение"><img class="img-scale" src="../static/images/icecream/{$product["image_path"]}" style="height:50px; margin:0;"></td>
         <td data-label="Ед. измерения">{$product["unit"]}</td>
         <td data-label="Количество">{$product["quantity"]}</td>
         <td data-label="Цена (Br)">{$product["price"]}</td>

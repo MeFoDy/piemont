@@ -13,7 +13,8 @@ export default {
     methods: {
         getProducts() {
             this.$http.get(`${ config.apiBaseUrl }products.php`).then(response => {
-                this.categories = response.body.filter(category => category.products.length);
+                this.$root.$data.categories = response.body.filter(category => category.products.length);
+                this.categories = this.$root.$data.categories;
             });
         },
     },

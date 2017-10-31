@@ -25,19 +25,19 @@
                 </div>
                 <div class="contacts__block">
                     <icon name="envelope-o"></icon>
-                    <p><a class="contacts__link" href="mailto:office@melatto.com">office@melatto.com</a></p>
+                    <p><a class="contacts__link" href="mailto:e-caffe@piemont.by">e-caffe@piemont.by</a></p>
                 </div>
             </div>
         </div>
         <yandex-map
-            :coords="[54.026373, 27.968476]"
+            :coords="[54.026530, 27.968126]"
             zoom="16"
             :behaviors="['default']"
             :controls="['smallMapDefaultSet']"
             map-type="map">
             <ymap-marker
                 marker-type="placemark"
-                :coords="[54.026373, 27.968476]"
+                :coords="[54.026530, 27.968126]"
                 hint-content="Офис компании Мелатто"
                 :balloon="{header: 'Мелатто', body: 'Офис компании', footer: '<a href=\'tel:+375296867673\'>8 029 686-76-73</a><br><a href=\'tel:+375298348180\'>8 029 834-81-80</a>'}"
                 :icon="{content: 'Мелатто'}"

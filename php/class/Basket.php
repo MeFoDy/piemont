@@ -11,9 +11,10 @@ class Basket
         if (! ($stmt = mysqli_prepare(
             $mysqli,
             "INSERT INTO basket(". self::FIELDS . ") " .
-                "VALUES ('', ?, ?, ?, ?, now(), false)"
+                "VALUES (0, ?, ?, ?, ?, now(), false)"
         ))) {
             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+            return false;
         }
         if (!mysqli_stmt_bind_param(
             $stmt,
@@ -24,30 +25,14 @@ class Basket
             $basket["comment"]
         )) {
             echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+            return false;
         }
 
         if (!mysqli_stmt_execute($stmt)) {
             echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+            return false;
         }
         mysqli_stmt_close($stmt);
-        /**
-         * WARNING: Possible race condition.. :( 
-         * */
-        return self::getLast()['id'];
+        return mysqli_insert_id($mysqli);
     }
-    
-    public static function getLast()
-    {
-        $ret = null;
-        global $mysqli;
-        $query = "SELECT * FROM basket ORDER BY id DESC LIMIT 1";
-        if (!$result = $mysqli->query($query)) {
-            return $ret;
-        }
-        if ($result->num_rows === 0) {
-            return $ret;
-        }
-        return $result->fetch_assoc();
-    }
-    
 }

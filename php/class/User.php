@@ -11,8 +11,8 @@ class User
         $stmt = mysqli_prepare($mysqli, "SELECT * FROM user WHERE username=?");
         mysqli_stmt_bind_param($stmt, 's', $username);
         mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        if ($row = mysqli_fetch_assoc($result)) {
+        $result = get_mysqli_result($stmt);
+        if ($row = array_shift($result)) {
             $ret = $row;
         }
         mysqli_stmt_close($stmt);

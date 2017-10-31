@@ -8,3 +8,6 @@ if(isset($_GET["id"])){
 }
 
 include_once("page/orders/list.php");
+
+header("Location: " . strtok($_SERVER["REQUEST_URI"],'?'));
+exit();

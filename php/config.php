@@ -7,5 +7,9 @@ $config = [
         "user" => "user",
         "password" => "passwrod",
         "database" => "database",
+    ],
+    "emails" => [
+        "work" => "e-caffe@piemont.by",
+        "personal" => "n.a.dubko@gmail.com",
     ]
 ];

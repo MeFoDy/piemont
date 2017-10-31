@@ -11,8 +11,8 @@ class ProductCategory
         $stmt = mysqli_prepare($mysqli, "SELECT " . self::FIELDS . " FROM product_category WHERE id=?");
         mysqli_stmt_bind_param($stmt, 'i', $id);
         mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        if ($row = mysqli_fetch_assoc($result)) {
+        $result = get_mysqli_result($stmt);
+        if ($row = array_shift($result)) {
             $ret = $row;
         }
         mysqli_stmt_close($stmt);

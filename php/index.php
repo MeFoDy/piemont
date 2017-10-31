@@ -7,7 +7,7 @@ if (isset($_GET["action"]) && strtolower($_GET["action"]) == "logout") {
     logout();
 }
 
-$target = "./page/products/products.php";
+$target = "./page/orders/orders.php";
 
 if (isset($_GET["page"])) {
     switch (strtolower($_GET["page"])) {

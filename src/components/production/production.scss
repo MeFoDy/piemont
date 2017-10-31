@@ -3,24 +3,28 @@
 .production {
     position: relative;
 
-    background-color: #fff1cc;
+    background-color: #fff8e6;
     box-shadow: 0 0 100px 0 rgba(#000000, 0.5);
 
     &__wrapper {
         max-width: $widht--container;
         margin: 0 auto;
+        padding: 20px;
     }
 
     &__title {
     }
 
+    &__description {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
     &__block {
-        padding: 20px 50px;
+        padding: 20px 0;
 
-        background-color: #fff1cc;
-
-        &--alt {
-            background-color: #fff8e6;
+         + .production__block {
+            border-top: 1px solid $color--primary;
         }
     }
 

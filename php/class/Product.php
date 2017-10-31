@@ -12,8 +12,8 @@ class Product
         $stmt = mysqli_prepare($mysqli, "SELECT " . self::FIELDS . " FROM product WHERE id=?");
         mysqli_stmt_bind_param($stmt, 'i', $id);
         mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        if ($row = mysqli_fetch_assoc($result)) {
+        $result = get_mysqli_result($stmt);
+        if ($row = array_shift($result)) {
             $ret = $row;
         }
         mysqli_stmt_close($stmt);
@@ -27,8 +27,8 @@ class Product
         $stmt = mysqli_prepare($mysqli, "SELECT " . self::FIELDS . " FROM product WHERE product_category_id=?");
         mysqli_stmt_bind_param($stmt, 'i', $category_id);
         mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        while ($row = mysqli_fetch_assoc($result)) {
+        $result = get_mysqli_result($stmt);
+        while ($row = array_shift($result)) {
             array_push($ret, $row);
         }
         mysqli_stmt_close($stmt);

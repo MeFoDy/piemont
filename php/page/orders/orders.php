@@ -11,12 +11,6 @@ if (isset($_GET["action"])) {
         case "list" :
             $action = "list";
             break;
-        case "add" :
-            $action = "add";
-            break;
-        case "edit" :
-            $action = "edit";
-            break;
         case "confirm":
             $action = "confirm";
             break;
