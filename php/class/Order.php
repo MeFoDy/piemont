@@ -136,9 +136,6 @@ EOT;
     {
         global $mysqli;
         
-        /**
-         *  Set order_items done
-         * */
         if (! ($stmt = mysqli_prepare(
             $mysqli,
             "DELETE FROM order_item WHERE basket_id=?"
@@ -158,9 +155,6 @@ EOT;
         }
         mysqli_stmt_close($stmt);
         
-        /**
-         *  Set basket done
-         * */
         if (! ($stmt = mysqli_prepare(
             $mysqli,
             "DELETE FROM basket WHERE id=?"
