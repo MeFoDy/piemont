@@ -131,4 +131,53 @@ EOT;
         }
         mysqli_stmt_close($stmt);
     }
+    
+    public static function remove($basket_id)
+    {
+        global $mysqli;
+        
+        /**
+         *  Set order_items done
+         * */
+        if (! ($stmt = mysqli_prepare(
+            $mysqli,
+            "DELETE FROM order_item WHERE basket_id=?"
+        ))) {
+            echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+        }
+        if (!mysqli_stmt_bind_param(
+            $stmt,
+            "i",
+            $basket_id
+        )) {
+            echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+        }
+
+        if (!mysqli_stmt_execute($stmt)) {
+            echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+        }
+        mysqli_stmt_close($stmt);
+        
+        /**
+         *  Set basket done
+         * */
+        if (! ($stmt = mysqli_prepare(
+            $mysqli,
+            "DELETE FROM basket WHERE id=?"
+        ))) {
+            echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+        }
+        if (!mysqli_stmt_bind_param(
+            $stmt,
+            "i",
+            $basket_id
+        )) {
+            echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+        }
+
+        if (!mysqli_stmt_execute($stmt)) {
+            echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+        }
+        mysqli_stmt_close($stmt);
+    }
 }

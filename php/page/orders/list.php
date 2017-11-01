@@ -59,14 +59,16 @@ echo <<<EOD
 EOD;
 if(!$item["basket_is_done"]){
 echo <<<EOD
-        <a href="index.php?page=orders&action=confirm&id={$item["id"]}">Подтвердить</a>
+        <a class="button primary" href="index.php?page=orders&action=confirm&id={$item["id"]}">Подтвердить</a>
 EOD;
 } else {
     echo "<mark class='tertiary'>обработан</mark>";
 }
-echo "
+echo <<<EOD
+            <a class="button secondary" href="index.php?page=orders&action=remove&id={$item["id"]}" onclick="return confirm('Вы уверены, что хотите удалить заказ?');">&times;</a>
         </td>
-    </tr>";
+    </tr>
+EOD;
 }
 
 

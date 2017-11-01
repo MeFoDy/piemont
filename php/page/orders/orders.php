@@ -14,6 +14,9 @@ if (isset($_GET["action"])) {
         case "confirm":
             $action = "confirm";
             break;
+        case "remove":
+            $action = "remove";
+            break;
     }
 }
 
