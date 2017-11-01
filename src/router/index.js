@@ -10,7 +10,7 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
-    { path: "/", redirect: { name: "main" }},
+    { path: "/", redirect: { name: "main" } },
     {
       path: "/main",
       name: "main",
@@ -37,4 +37,10 @@ export default new Router({
       component: Contacts,
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { x: 0, y: 0 };
+  },
 });
