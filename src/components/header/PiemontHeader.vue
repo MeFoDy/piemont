@@ -19,7 +19,7 @@
                     <router-link to="/production" class="header__nav-link">Продукция</router-link>
                 </li>
                 <li class="header__nav-item">
-                    <router-link to="/partners" class="header__nav-link">Наши партнеры</router-link>
+                    <router-link to="/delivery" class="header__nav-link">Доставка</router-link>
                 </li>
                 <li class="header__nav-item">
                     <router-link to="/contacts" class="header__nav-link">Контакты</router-link>

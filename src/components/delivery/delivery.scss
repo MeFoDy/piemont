@@ -1,0 +1,25 @@
+@import '../../styles/settings.scss';
+
+@import '../../styles/mixins.scss';
+
+.delivery {
+    $sm-size: 850px;
+
+    @include mqm($sm-size) {
+        padding: 10px 20px 20px;
+
+        font-size: 16px;
+    }
+
+    max-width: $widht--container;
+    margin: 0 auto;
+    padding: 10px 50px 50px;
+
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+
+    p {
+        margin-bottom: 1.5em;
+    }
+}

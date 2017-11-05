@@ -1,7 +1,7 @@
 import About from "@/components/about/About.vue";
 import Contacts from "@/components/contacts/Contacts.vue";
+import Delivery from "@/components/delivery/Delivery.vue";
 import Hero from "@/components/hero/Hero.vue";
-import Partners from "@/components/partners/Partners.vue";
 import Production from "@/components/production/Production.vue";
 import Router from "vue-router";
 import Vue from "vue";
@@ -27,9 +27,9 @@ const router = new Router({
       component: Production,
     },
     {
-      path: "/partners",
-      name: "partners",
-      component: Partners,
+      path: "/delivery",
+      name: "delivery",
+      component: Delivery,
     },
     {
       path: "/contacts",

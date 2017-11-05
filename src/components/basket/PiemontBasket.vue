@@ -56,6 +56,5 @@
 <script src="./basket.js"></script>
 
 <style lang="scss">
-    @import './basket.scss';
-
+@import "./basket.scss";
 </style>

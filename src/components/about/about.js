@@ -1,9 +1,11 @@
 import NdLightbox from "@/components/nd-lightbox/NdLightbox.vue";
+import Partners from "@/components/partners/Partners.vue";
 
 export default {
     name: "About",
     components: {
         NdLightbox,
+        Partners,
     },
     data() {
         return {

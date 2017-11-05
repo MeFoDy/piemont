@@ -9,8 +9,8 @@ export default {
     },
     data() {
         return {
-            isInProcess: false,
             basket: [],
+            isInProcess: false,
             total: 0,
             user: {
                 name: "",
