@@ -12,6 +12,7 @@ import Icon from "vue-awesome/components/Icon";
 import NanoEvents from "nanoevents";
 import Vue from "vue";
 import Vue2TouchEvents from "vue2-touch-events";
+import VueInputMask from "@/directives/vue-inputmask";
 import VueLazyload from "vue-lazyload";
 import VueResource from "vue-resource";
 import YmapPlugin from "vue-yandex-maps";
@@ -30,8 +31,6 @@ Vue.use(YmapPlugin);
 Vue.use(VueResource);
 Vue.use(VueLazyload);
 Vue.use(Vue2TouchEvents);
-
-const VueInputMask = require("vue-inputmask").default;
 Vue.use(VueInputMask);
 
 Vue.config.productionTip = false;
