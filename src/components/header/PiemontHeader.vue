@@ -6,8 +6,8 @@
             </router-link>
         </div>
         <input type="checkbox" id="header__nav-toggler" class="header__nav-toggler-input">
-        <label for="header__nav-toggler" class="header__nav-toggler"></label>
-        <nav class="header__nav">
+        <label for="header__nav-toggler" class="header__nav-toggler" v-on:click="toggleNavigation"></label>
+        <nav class="header__nav" v-touch:swipe.right="hideNavigation">
             <ul class="header__nav-items">
                 <li class="header__nav-item">
                     <router-link to="/main" class="header__nav-link">Главная</router-link>
