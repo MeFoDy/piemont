@@ -1,10 +1,11 @@
 <template>
     <div v-bind:class="['product-card', hasInStore ? '' : 'inactive']">
-        <div class="product-card__title">{{item.name}} <span class="product-card__price">{{item.price}} BYN / {{item.unit}}</span></div>
+        <h3 class="product-card__title">{{item.name}} <span class="product-card__price">{{item.price}} BYN / {{item.unit}}</span></h3>
         <div class="product-card__controls">
             <button type="button"
                     :disabled="minusDisabled"
                     class="product-card__btn product-card__btn-minus"
+                    :aria-label="'Отнять 1 ' + item.unit"
                     v-on:click="decrementCount">
                     <icon name="minus"></icon>
             </button>
@@ -12,6 +13,7 @@
             <button type="button"
                     :disabled="plusDisabled"
                     class="product-card__btn product-card__btn-plus"
+                    :aria-label="'Добавить 1 ' + item.unit"
                     v-on:click="incrementCount">
                 <icon name="plus"></icon>
             </button>

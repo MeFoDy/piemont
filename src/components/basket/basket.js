@@ -97,6 +97,7 @@ export default {
                 return;
             }
             this.isInProcess = true;
+            this.$root.$data.emitter.emit("loading-started");
             const data = {
                 name: this.user.name,
                 phone: this.user.phone,
@@ -116,9 +117,11 @@ export default {
                         this.showWarningModal();
                     }
                     this.isInProcess = false;
+                    this.$root.$data.emitter.emit("loading-finished");
                 }, () => {
                     this.showWarningModal();
                     this.isInProcess = false;
+                    this.$root.$data.emitter.emit("loading-finished");
                 });
         },
     },

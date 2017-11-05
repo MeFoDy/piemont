@@ -9,7 +9,7 @@
         <sweet-modal title="Оформление заказа" ref="modal">
             <h4>Выбранные десерты:</h4>
             <ol class="basket__items-list">
-                <li v-for="item,key in user.products">
+                <li v-for="(item,i) in user.products" v-bind:key="i">
                     «{{item.displayName}}» <span class="basket__item-info">{{item.count}} {{item.unit}} × {{item.price}} BYN = <b>{{item.total}} BYN</b></span>
                 </li>
             </ol>

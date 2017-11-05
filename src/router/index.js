@@ -8,7 +8,7 @@ import Vue from "vue";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     { path: "/", redirect: { name: "main" } },
     {
@@ -44,3 +44,17 @@ export default new Router({
     return { x: 0, y: 0 };
   },
 });
+
+router.beforeEach((to, from, next) => {
+  if (router.app.emitter) {
+    router.app.emitter.emit("loading-started");
+  }
+  next();
+});
+router.afterEach(() => {
+  if (router.app.emitter) {
+    router.app.emitter.emit("loading-finished");
+  }
+});
+
+export default router;

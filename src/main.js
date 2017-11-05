@@ -11,11 +11,13 @@ import App from "./App";
 import Icon from "vue-awesome/components/Icon";
 import NanoEvents from "nanoevents";
 import Vue from "vue";
+import VueLazyload from "vue-lazyload";
 import VueResource from "vue-resource";
 import YmapPlugin from "vue-yandex-maps";
 import basket from "@/basket";
 import jquery from "jquery";
 import router from "./router";
+
 
 const emitter = new NanoEvents();
 
@@ -25,6 +27,7 @@ window.$ = window.jQuery = jquery;
 
 Vue.use(YmapPlugin);
 Vue.use(VueResource);
+Vue.use(VueLazyload);
 
 const VueInputMask = require("vue-inputmask").default;
 Vue.use(VueInputMask);

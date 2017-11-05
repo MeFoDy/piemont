@@ -1,8 +1,14 @@
 @import '../../styles/settings.scss';
 
+@import '../../styles/mixins.scss';
+
 .product-card {
     $btn--height: 30px;
     $card--width: 400px;
+
+    @include mqm($card--width) {
+        padding-bottom: 110%;
+    }
 
     position: relative;
 

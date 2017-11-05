@@ -5,7 +5,7 @@
         <div class="hero__carousel">
             <slider animation="fade" :interval="5000">
                 <slider-item v-for="index in [1, 2, 3, 4]" :key="index">
-                    <div class="hero__carousel-slide" v-bind:class="'slide-' + index"></div>
+                    <div class="hero__carousel-slide" v-lazy:background-image="'/static/images/slider/slider-' + index + '.jpg'"></div>
                 </slider-item>
             </slider>
         </div>
