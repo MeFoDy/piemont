@@ -202,7 +202,7 @@
 
         color: #666666;
 
-        &.active,
+        &--active,
         &:hover {
             color: $color--link;
         }

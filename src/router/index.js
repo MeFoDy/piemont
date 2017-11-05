@@ -43,6 +43,7 @@ const router = new Router({
     }
     return { x: 0, y: 0 };
   },
+  linkActiveClass: "header__nav-link--active",
 });
 
 router.beforeEach((to, from, next) => {
