@@ -5,6 +5,7 @@ export default {
     props: ["item"],
     data() {
         return {
+            entryCount: 1,
             count: 0,
             isInBasket: false,
             imagesBase: `${ config.imagesBase }icecream/`,
@@ -20,6 +21,7 @@ export default {
             this.count = product.count;
             this.isInBasket = !!product.isInBasket;
         }
+        this.entryCount = config.entryCount;
     },
     beforeDestroy() {
         if (this.unbindEmitter) {
@@ -58,15 +60,17 @@ export default {
             this.isInBasket = product.isInBasket;
         },
         incrementCount() {
-            this.count = +this.count + 1;
+            this.count = +this.count + this.entryCount;
+            this.validate();
         },
         decrementCount() {
-            this.count -= this.count > 0 ? 1 : 0;
+            this.count -= this.count > 0 ? this.entryCount : 0;
+            this.validate();
         },
         validate() {
-            this.count = Math.floor(this.count);
-            if (this.count > Math.floor(this.item.quantity)) {
-                this.count = Math.floor(this.item.quantity);
+            this.count = +this.count;
+            if (this.count > this.item.quantity) {
+                this.count = this.item.quantity;
             }
             if (this.count < 0) {
                 this.count = 0;
@@ -78,16 +82,16 @@ export default {
             return this.$root.$data.basket;
         },
         total: function() {
-            return this.count * this.item.price;
+            return (this.count * this.item.price).toFixed(2);
         },
         minusDisabled: function() {
             return this.count == 0;
         },
         plusDisabled: function() {
-            return (+this.count + 1) >= this.item.quantity;
+            return (+this.count + this.entryCount) >= this.item.quantity;
         },
         hasInStore: function() {
-            return this.item.quantity >= 1;
+            return this.item.quantity >= this.entryCount;
         },
     },
 };

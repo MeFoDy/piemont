@@ -45,7 +45,7 @@ export default {
             return `${ this.products.length } ${ declOfNum(this.products.length, ["вид десерта", "вида десерта", "видов десерта"]) }`;
         },
         itemsPrice() {
-            return this.products.reduce((prev, current) => prev + current.count * current.price, 0);
+            return this.products.reduce((prev, current) => prev + current.count * current.price, 0).toFixed(2);
         },
     },
     methods: {

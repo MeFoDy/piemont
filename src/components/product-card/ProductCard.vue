@@ -5,15 +5,20 @@
             <button type="button"
                     :disabled="minusDisabled"
                     class="product-card__btn product-card__btn-minus"
-                    :aria-label="'Отнять 1 ' + item.unit"
+                    :aria-label="'Отнять ' + entryCount + ' ' + item.unit"
                     v-on:click="decrementCount">
                     <icon name="minus"></icon>
             </button>
-            <input v-model="count" type="number" min="0" class="product-card__count-input" v-on:change="validate">
+            <input v-model="count"
+                   type="text"
+                   class="product-card__count-input"
+                   v-on:keyup.up="incrementCount"
+                   v-on:keyup.down="decrementCount"
+                   v-on:change="validate">
             <button type="button"
                     :disabled="plusDisabled"
                     class="product-card__btn product-card__btn-plus"
-                    :aria-label="'Добавить 1 ' + item.unit"
+                    :aria-label="'Добавить ' + entryCount + ' ' + item.unit"
                     v-on:click="incrementCount">
                 <icon name="plus"></icon>
             </button>

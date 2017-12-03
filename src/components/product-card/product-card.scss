@@ -92,7 +92,7 @@
         border: none;
 
         font-size: 14px;
-        line-height: $btn--height;
+        line-height: #{$btn--height - 10px};
     }
 
     &__order-info {
