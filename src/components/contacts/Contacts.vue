@@ -27,6 +27,10 @@
                     <icon name="envelope-o"></icon>
                     <p><a class="contacts__link" href="mailto:e-caffe@piemont.by">e-caffe@piemont.by</a></p>
                 </div>
+                <div class="contacts__block">
+                    <icon name="facebook"></icon>
+                    <p><a class="contacts__link" href="https://www.facebook.com/piemont.by">facebook.com/piemont.by</a></p>
+                </div>
             </div>
         </div>
         <yandex-map

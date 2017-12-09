@@ -1,5 +1,6 @@
 import "vue-awesome/icons/envelope-o";
 import "vue-awesome/icons/fax";
+import "vue-awesome/icons/facebook";
 import "vue-awesome/icons/home";
 import "vue-awesome/icons/minus";
 import "vue-awesome/icons/phone";
