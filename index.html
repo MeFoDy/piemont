@@ -2,134 +2,135 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" href="./static/images/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-  <title>Piemont – мороженое десерты замороженные</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="десерт, сладкое, мороженое, мороженое итальянское, Пьемонт, мороженое доставка, итальянское мороженое, мороженое пьемонт, мелатто, еда">
+    <link rel="shortcut icon" href="./static/images/icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <title>Piemont – мороженое десерты замороженные</title>
 </head>
 
 <body>
-  <div id="app">
-    <style>
-      body {
-          margin: 0;
-      }
+    <div id="app">
+        <style>
+            body {
+                margin: 0;
+            }
 
-      .full-viewport {
-          position: fixed;
-          z-index: 100000;
+            .full-viewport {
+                position: fixed;
+                z-index: 100000;
 
-          display: flex;
-          overflow: hidden;
+                display: flex;
+                overflow: hidden;
 
-          width: 100%;
-          height: 100%;
+                width: 100%;
+                height: 100%;
 
-          background: rgba(0, 0, 0, 0.5);
-      }
+                background: rgba(0, 0, 0, 0.5);
+            }
 
-      .container {
-          position: fixed;
-          top: 50%;
-          left: 50%;
+            .container {
+                position: fixed;
+                top: 50%;
+                left: 50%;
 
-          width: 100px;
-          height: 140px;
+                width: 100px;
+                height: 140px;
 
-          transform: translate(-50%, -50%);
-      }
+                transform: translate(-50%, -50%);
+            }
 
-      .icecream {
-          position: relative;
+            .icecream {
+                position: relative;
 
-          display: block;
-          overflow: hidden;
+                display: block;
+                overflow: hidden;
 
-          width: 60px;
-          height: 90px;
-          margin: 0 auto;
+                width: 60px;
+                height: 90px;
+                margin: 0 auto;
 
-          animation: float 2s ease-in infinite alternate;
+                animation: float 2s ease-in infinite alternate;
 
-          border-radius: 27px 27px 5px 5px;
-      }
+                border-radius: 27px 27px 5px 5px;
+            }
 
-      .icecream::before {
-          position: absolute;
-          top: -10%;
-          left: -20%;
+            .icecream::before {
+                position: absolute;
+                top: -10%;
+                left: -20%;
 
-          display: block;
+                display: block;
 
-          width: 140%;
-          height: 120%;
+                width: 140%;
+                height: 120%;
 
-          content: '';
-          transform: rotate(20deg);
-          animation: magic 7.5s linear infinite;
+                content: '';
+                transform: rotate(20deg);
+                animation: magic 7.5s linear infinite;
 
-          background-image: linear-gradient(0deg, #6e4440 0%, #6e4440 25%, #f3debe 25%, #f3debe 50%, #6e4440 50%, #6e4440 75%, #f3debe 75%);
-      }
+                background-image: linear-gradient(0deg, #6e4440 0%, #6e4440 25%, #f3debe 25%, #f3debe 50%, #6e4440 50%, #6e4440 75%, #f3debe 75%);
+            }
 
-      @-webkit-keyframes magic {
-          to {
-              background-position: 0 108px;
-          }
-      }
+            @-webkit-keyframes magic {
+                to {
+                    background-position: 0 108px;
+                }
+            }
 
-      @keyframes magic {
-          to {
-              background-position: 0 108px;
-          }
-      }
+            @keyframes magic {
+                to {
+                    background-position: 0 108px;
+                }
+            }
 
-      .icecream::after {
-          position: absolute;
-          bottom: 0;
-          left: 0;
+            .icecream::after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
 
-          width: 50%;
-          height: 100%;
+                width: 50%;
+                height: 100%;
 
-          content: '';
+                content: '';
 
-          background: rgba(255, 255, 255, 0.15);
-      }
+                background: rgba(255, 255, 255, 0.15);
+            }
 
-      .stick {
-          display: block;
+            .stick {
+                display: block;
 
-          width: 19px;
-          height: 22px;
-          margin: 0 auto;
+                width: 19px;
+                height: 22px;
+                margin: 0 auto;
 
-          border-radius: 0 0 6px 6px;
-          background: #e09c5f;
-      }
+                border-radius: 0 0 6px 6px;
+                background: #e09c5f;
+            }
 
-      .stick::after {
-          display: block;
+            .stick::after {
+                display: block;
 
-          width: 100%;
-          height: 7px;
+                width: 100%;
+                height: 7px;
 
-          content: '';
+                content: '';
 
-          background: rgba(0, 0, 0, 0.4);
-      }
+                background: rgba(0, 0, 0, 0.4);
+            }
 
-    </style>
-    <div class="full-viewport">
-      <div class="container">
-        <div class="icecream">
-          <div class="colors"></div>
+        </style>
+        <div class="full-viewport">
+            <div class="container">
+                <div class="icecream">
+                    <div class="colors"></div>
+                </div>
+                <div class="stick"></div>
+            </div>
         </div>
-        <div class="stick"></div>
-      </div>
     </div>
-  </div>
 </body>
 
 </html>
