@@ -5,7 +5,9 @@ include_once ("class/ProductCategory.php");
 
 $category = [
     "name" => $_POST["name"],
+    "name_short" => $_POST["name_short"],
     "description" => $_POST["description"],
+    "price" => $_POST["price"],
     "sort_order" => $_POST["sort_order"]
 ];
 if (isset($_POST["id"])) {

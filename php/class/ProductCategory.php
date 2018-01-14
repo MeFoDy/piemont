@@ -3,7 +3,7 @@ if (!defined("is-INDEX-page")) exit();
 
 class ProductCategory
 {
-    const FIELDS = 'id, name, description, sort_order';
+    const FIELDS = 'id, name, name_short, description, price, sort_order';
     public static function get($id)
     {
         global $mysqli;
@@ -42,16 +42,18 @@ class ProductCategory
         if (! ($stmt = mysqli_prepare(
             $mysqli,
             "UPDATE product_category " .
-                "SET name=?, description=?, sort_order=? " .
+                "SET name=?, name_short=?, description=?, price=?, sort_order=? " .
                 "WHERE id=?"
         ))) {
             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
         }
         if (!mysqli_stmt_bind_param(
             $stmt,
-            "ssii",
+            "ssssii",
             $product_category["name"],
+            $product_category["name_short"],
             $product_category["description"],
+            $product_category["price"],
             $product_category["sort_order"],
             $product_category["id"]
         )) {
@@ -69,16 +71,18 @@ class ProductCategory
         global $mysqli;
         if (! ($stmt = mysqli_prepare(
             $mysqli,
-            "INSERT INTO product_category(name, description, sort_order) " .
-                "VALUES (?, ?, ?)"
+            "INSERT INTO product_category(name, name_short, description, price, sort_order) " .
+                "VALUES (?, ?, ?, ?, ?)"
         ))) {
             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
         }
         if (!mysqli_stmt_bind_param(
             $stmt,
-            "ssi",
+            "ssssi",
             $product_category["name"],
+            $product_category["name_short"],
             $product_category["description"],
+            $product_category["price"],
             $product_category["sort_order"]
         )) {
             echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;

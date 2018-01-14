@@ -12,7 +12,9 @@ echo <<<EOD
         <tr>
             <th>#</th>
             <th>Название</th>
+            <th>Имя</th>
             <th>Описание</th>
+            <th>Цена</th>
             <th>Действия</th>
         </tr>
     </thead>
@@ -24,7 +26,9 @@ foreach ($categories as $category) {
     <tr>
         <td data-label="#">{$category["sort_order"]}</td>
         <td data-label="Название">{$category["name"]}</td>
+        <td data-label="Имя">{$category["name_short"]}</td>
         <td data-label="Описание">{$category["description"]}</td>
+        <td data-label="Цена">{$category["price"]}</td>
         <td data-label="Действия">
             <a href="index.php?page=categories&action=edit&id={$category['id']}">Редактировать</a>
         </td>

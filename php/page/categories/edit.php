@@ -13,12 +13,22 @@ echo <<<EOD
 
     <div class="input-group fluid">
       <label for="name" style="width: 100px;">Название</label>
-      <input autofocus type="text" required value="{$category["name"]}" name="name" id="name" placeholder="Десерты замороженные 'Премиум'">
+      <input type="text" required value="{$category["name"]}" name="name" id="name" placeholder="Десерты замороженные 'Премиум'">
+    </div>
+
+    <div class="input-group fluid">
+      <label for="name_short" style="width: 100px;">Имя</label>
+      <input autofocus type="text" required value="{$category["name_short"]}" name="name_short" id="name_short" placeholder="Премиум">
     </div>
 
     <div class="input-group fluid align-top">
       <label for="description" style="width: 100px;">Описание</label>
       <textarea id="description" name="description">{$category["description"]}</textarea>
+    </div>
+
+    <div class="input-group fluid">
+      <label for="price" style="width: 100px;">Цена</label>
+      <input type="text" required value="{$category["price"]}" name="price" id="price" placeholder="1 руб 75 коп">
     </div>
 
     <div class="input-group fluid">

@@ -11,10 +11,19 @@ echo <<<EOD
       <input autofocus type="text" required value="" name="name" id="name" placeholder="Десерты замороженные 'Премиум'">
     </div>
 
+    <div class="input-group fluid">
+      <label for="name_short" style="width: 100px;">Имя</label>
+      <input type="text" required value="" name="name_short" id="name_short" placeholder="Премиум">
+    </div>
 
     <div class="input-group fluid align-top">
       <label for="description" style="width: 100px;">Описание</label>
       <textarea id="description" name="description"></textarea>
+    </div>
+
+    <div class="input-group fluid">
+      <label for="price" style="width: 100px;">Цена</label>
+      <input type="text" required value="" name="price" id="price" placeholder="1 руб 75 коп">
     </div>
 
     <div class="input-group fluid">
