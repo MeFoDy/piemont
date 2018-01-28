@@ -24,7 +24,7 @@ class Product
     {
         $ret = [];
         global $mysqli;
-        $stmt = mysqli_prepare($mysqli, "SELECT " . self::FIELDS . " FROM product WHERE product_category_id=?");
+        $stmt = mysqli_prepare($mysqli, "SELECT " . self::FIELDS . " FROM product WHERE product_category_id=? ORDER BY sort_order ASC");
         mysqli_stmt_bind_param($stmt, 'i', $category_id);
         mysqli_stmt_execute($stmt);
         $result = get_mysqli_result($stmt);

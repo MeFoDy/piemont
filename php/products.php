@@ -11,9 +11,12 @@ include_once ("./class/Product.php");
 $categories = ProductCategory::getAll();
 foreach ($categories as $key => $category) {
     $products = Product::getByCategory($category["id"]);
-    $categories[$key]["products"] = array_filter($products, function($product) {
-        return $product["is_active"];
-    });
+    $categories[$key]["products"] = [];
+    foreach ($products as $k => $product) {
+      if ($product["is_active"]) {
+        array_push($categories[$key]["products"], $product);
+      }
+    }
 }
 
 header('Content-type: application/json');
