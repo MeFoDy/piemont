@@ -42,6 +42,11 @@ echo <<<EOD
     </div>
 
     <div class="input-group fluid">
+      <label for="video_url" style="width: 120px;">Видео</label>
+      <input type="text" name="video_url" id="video_url" placeholder="https://youtube.com/...">
+    </div>
+
+    <div class="input-group fluid">
       <label for="unit" style="width: 120px;">Ед. измерения</label>
       <input type="text" required value="кг" name="unit" id="unit" placeholder="кг">
     </div>

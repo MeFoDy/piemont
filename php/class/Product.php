@@ -3,7 +3,7 @@ if (!defined("is-INDEX-page")) exit();
 
 class Product
 {
-    const FIELDS = 'id, name, description, sort_order, product_category_id, price, image_path, unit, quantity, updated_by, updated_on, is_active';
+    const FIELDS = 'id, name, description, sort_order, product_category_id, price, image_path, unit, quantity, updated_by, updated_on, is_active, video_url';
 
     public static function get($id)
     {
@@ -75,14 +75,14 @@ class Product
         if (! ($stmt = mysqli_prepare(
             $mysqli,
             "UPDATE product " .
-                "SET name=?, description=?, product_category_id=?, sort_order=?, image_path=?, unit=?, quantity=?, price=?, updated_by=?, updated_on=now(), is_active=? " .
+                "SET name=?, description=?, product_category_id=?, sort_order=?, image_path=?, unit=?, quantity=?, price=?, updated_by=?, updated_on=now(), is_active=?, video_url=? " .
                 "WHERE id=?"
         ))) {
             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
         }
         if (!mysqli_stmt_bind_param(
             $stmt,
-            "ssiissddssi",
+            "ssiissddsssi",
             $product["name"],
             $product["description"],
             $product["product_category_id"],
@@ -93,6 +93,7 @@ class Product
             $product["price"],
             $product["updated_by"],
             $product["is_active"],
+            $product["video_url"],
             $product["id"]
         )) {
             echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
@@ -109,8 +110,8 @@ class Product
         global $mysqli;
         if (! ($stmt = mysqli_prepare(
             $mysqli,
-            "INSERT INTO product(name, description, product_category_id, sort_order, image_path, unit, quantity, price, updated_by, updated_on, is_active) " .
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, now(), ?)"
+            "INSERT INTO product(name, description, product_category_id, sort_order, image_path, unit, quantity, price, video_url, updated_by, updated_on, is_active) " .
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now(), ?)"
         ))) {
             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
         }
@@ -125,6 +126,7 @@ class Product
             $product["unit"],
             $product["quantity"],
             $product["price"],
+            $product["video_url"],
             $product["updated_by"],
             $product["is_active"]
         )) {

@@ -12,6 +12,7 @@ $product = [
     "unit" => $_POST["unit"],
     "quantity" => $_POST["quantity"],
     "price" => $_POST["price"],
+    "video_url" => $_POST["video_url"],
     "updated_by" => $_POST["updated_by"] || $user["name"],
     "is_active" => $_POST["is_active"],
 ];

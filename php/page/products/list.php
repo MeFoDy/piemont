@@ -17,6 +17,7 @@ echo <<<EOD
             <th>Название</th>
             <th>Категория</th>
             <th>Изображение</th>
+            <th>Видео</th>
             <th>Ед. изм.</th>
             <th>Количество</th>
             <th>Цена (Byn)</th>
@@ -31,12 +32,14 @@ foreach ($products as $product) {
     $key = array_search($product["product_category_id"], array_column($categories, "id"));
     $category = $categories[$key];
     $enabled = $product["is_active"] ? "<mark class='tertiary'>да</mark>" : "<mark class='secondary'>нет</mark>";
+    $video = $product["video_url"] ? "<a href='" . $product["video_url"] . "'>видео</a>" : "";
     echo <<<EOD
     <tr>
         <td data-label="#">{$product["sort_order"]}</td>
         <td data-label="Название"><span title="{$product["description"]}">{$product["name"]}</span></td>
         <td data-label="Категория">{$category["name"]}</td>
         <td data-label="Изображение"><img class="img-scale" src="../static/images/icecream/{$product["image_path"]}" style="height:50px; margin:0;"></td>
+        <td data-label="Видео">{$video}</td>
         <td data-label="Ед. измерения">{$product["unit"]}</td>
         <td data-label="Количество">{$product["quantity"]}</td>
         <td data-label="Цена (Br)">{$product["price"]}</td>

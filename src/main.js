@@ -7,6 +7,7 @@ import "vue-awesome/icons/phone";
 import "vue-awesome/icons/plus";
 import "vue-awesome/icons/refresh";
 import "vue-awesome/icons/user";
+import "vue-awesome/icons/youtube";
 
 import App from "./App";
 import Icon from "vue-awesome/components/Icon";

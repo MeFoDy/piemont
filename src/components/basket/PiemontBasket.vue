@@ -15,7 +15,7 @@
             </ol>
             <p><b>К оплате:</b> {{total}} BYN*</p>
             <p class="basket__popup-note">указанная сумма к оплате является приблизительной, реальная сумма рассчитывается по массе расфасованного продукта</p>
-            <p class="basket__popup-note">при заказе от 4 кг — скидка 10%</p>
+            <!-- <p class="basket__popup-note">при заказе от 4 кг — скидка 10%</p> -->
             <hr>
             <div class="basket__input-group">
                 <label>Ваше имя*:</label>

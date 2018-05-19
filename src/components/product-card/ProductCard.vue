@@ -32,6 +32,9 @@
                     :disabled="!hasInStore">{{ isInBasket ? "Удалить" : "В корзину"}}</button>
         </div>
         <div class="product-card__description">{{item.description}}</div>
+        <a class="product-card__btn product-card__video-link"
+           v-bind:href="item.video_url"
+           v-if="item.video_url.trim()"><icon name="youtube"></icon> Видео</a>
         <img v-bind:src="imagesBase + item.image_path"
              v-bind:srcset="imagesBase + item.image_path + ' 1x, ' + imagesBase + item.image_path.replace('.', '@2x.') + ' 2x'"
              v-bind:alt="item.name"
@@ -42,6 +45,5 @@
 <script src="./product-card.js"></script>
 
 <style lang="scss">
-@import './product-card.scss';
-
+@import "./product-card.scss";
 </style>

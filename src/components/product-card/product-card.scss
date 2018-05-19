@@ -152,4 +152,13 @@
     &__btn-add {
         width: 100px;
     }
+
+    &__video-link {
+      text-decoration: none;
+      padding: 2px 5px;
+
+      .fa-icon {
+        height: 12px;
+      }
+    }
 }
