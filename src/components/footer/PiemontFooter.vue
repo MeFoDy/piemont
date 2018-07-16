@@ -1,7 +1,7 @@
 <template>
     <footer class="footer">
         <img src="/static/images/icon.png" alt="Piemont" class="footer__logo">
-        <p class="footer__copyright">2017 Piemont. Все права защищены</p>
+        <p class="footer__copyright">2018 Piemont. Все права защищены</p>
     </footer>
 </template>
 
